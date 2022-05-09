@@ -3,6 +3,7 @@ syntax = "proto3";
 package helloworld.v1;
 
 import "google/api/annotations.proto";
+import "google/protobuf/field_mask.proto";
 
 option go_package = "github.com/go-kratos/kratos-layout/api/helloworld/v1;v1";
 option java_multiple_files = true;
@@ -22,9 +23,16 @@ service Greeter {
 // The request message containing the user's name.
 message HelloRequest {
   string name = 1;
+  message test {
+    string one = 1;
+  }
+  test ones = 2;
+  google.protobuf.FieldMask field_mask = 3;
 }
 
 // The response message containing the greetings
 message HelloReply {
   string message = 1;
+  string me1 = 2;
+  string me2 = 3;
 }

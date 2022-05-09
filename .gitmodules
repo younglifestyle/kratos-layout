@@ -1,0 +1,3 @@
+[submodule "myapis"]
+	path = myapis
+	url = https://github.com/younglifestyle/myapis.git
