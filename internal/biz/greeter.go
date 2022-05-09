@@ -2,7 +2,13 @@ package biz
 
 import (
 	"context"
+	v1 "github.com/go-kratos/kratos-layout/myapis/kratos-layout/helloworld/v1"
+	"github.com/go-kratos/kratos/v2/errors"
 	"github.com/go-kratos/kratos/v2/log"
+)
+
+var (
+	ErrorUserNotFound = errors.NotFound(v1.ErrorReason_USER_NOT_FOUND.String(), "")
 )
 
 type Greeter struct {

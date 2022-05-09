@@ -3,8 +3,8 @@ package service
 import (
 	"context"
 	"fmt"
-	v1 "github.com/go-kratos/kratos-layout/api/helloworld/v1"
 	"github.com/go-kratos/kratos-layout/internal/biz"
+	v1 "github.com/go-kratos/kratos-layout/myapis/kratos-layout/helloworld/v1"
 	"github.com/go-kratos/kratos/v2/log"
 	fieldmask_utils "github.com/mennanov/fieldmask-utils"
 )
@@ -44,10 +44,6 @@ func (s *GreeterService) SayHello(ctx context.Context, in *v1.HelloRequest) (res
 	}
 	//in.FieldMask.IsValid()
 	//in.FieldMask.Normalize()
-
-	if in.GetName() == "error" {
-		return nil, v1.ErrorUserNotFound("user not found: %s", in.GetName())
-	}
 
 	return v, nil
 }
